@@ -35,3 +35,16 @@ run rails db:migrate
 
 /app/bookstock_controller.rb
 add read, create, update, destroy function for get/post/put/delete
+enter the data for table
+
+for search by book named
+rails generate controller searchbkname
+/app/searchbkname_controlller.rb
+implement the create method
+
+in postman execute post o/p with bookname i/p field
+
+for search by book author
+rails generate controller searchbkauthor
+/app/searchbkauthor_controller.rb
+implement the create method

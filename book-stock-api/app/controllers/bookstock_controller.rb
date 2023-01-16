@@ -6,18 +6,8 @@ class BookstockController < ApplicationController
 
     
     def show
-        bk = Bookstock.find(params[:id]) or Bookstock.find_by('bookname': params[:bookname]) 
+        bk = Bookstock.find(params[:id]) 
         render json: bk
-    end
-
-    def searchbybkname
-        bk = Bookstock.find_by('bookname': params[:bookname])
-        if(bk.nil?)
-            render json: "Book does not exit"
-        else
-            render json: bk
-            
-        end
     end
 
     def searchbybkauthor
