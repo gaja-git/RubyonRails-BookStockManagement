@@ -5,7 +5,7 @@ class SearchbkauthorController < ApplicationController
     end
 
     def create
-        bkbyauthor = Bookstock.find_by('bookauthor': params[:bookauthor])
+        bkbyauthor = Bookstock.where('bookauthor': params[:bookauthor])
         if(bkbyauthor.nil?)
             render json: "Book does not exit"
         else
