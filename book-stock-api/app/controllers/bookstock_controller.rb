@@ -1,13 +1,17 @@
 class BookstockController < ApplicationController
     skip_before_action :verify_authenticity_token
     def index
-        render json: Bookstock.all
+         render json: Bookstock.all
     end
 
     
     def show
-        bk = Bookstock.find(params[:id]) 
-        render json: bk
+        b = Bookstock.find_by_id(params[:id])
+        if(b.nil?)
+            render json:"No book of ID:#{params[:id]}" 
+        else
+            render json: b
+        end
     end
 
     def searchbybkauthor
